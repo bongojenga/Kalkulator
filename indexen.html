@@ -9,8 +9,8 @@
 
     <script>
         // Prośba użytkownika o wprowadzenie danych
-        var x = prompt("Podaj rozmiar zmiany (mm):");
-        var y = prompt("Podaj odległość od końca do środka strefy chłodzenia (mm):");
+        var x = prompt("Enter leasion diameter (mm):");
+        var y = prompt("Enter distance from cryoprobe tip to the cooling zone center (mm):");
 
         // Obliczenia
         var z = y - (x / 2);
@@ -20,11 +20,11 @@
 
         // Dodanie informacji dodatkowej na podstawie wartości z
         if (z > 0) {
-            document.write("Wierzchołek kriosondy powinien wystawać poza guz " + Math.abs(z) + " (mm).");
+            document.write("Cryoprobe tip should penetrate leasion by " + Math.abs(z) + " (mm).");
         } else if (z < 0) {
-            document.write("Wierzchołek kriosondy powinien pozostać wewnątrz guza " + Math.abs(z) + " (mm) od jego końca.");
+            document.write("Cryoprobe tip should remain in leasion " + Math.abs(z) + " (mm) from the end.");
         } else {
-            document.write("Wierzchołek kriosondy powinien znaleźć się dokładnie na końcu guza.");
+            document.write("Cryoprobe tip should be exacly on the end of leasion.");
         }
     </script>
 

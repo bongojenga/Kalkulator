@@ -12,6 +12,9 @@
         var x = prompt("Podaj rozmiar zmiany (mm):");
         var y = prompt("Podaj odległość od końca do środka strefy chłodzenia (mm):");
 
+        var x = parseFloat(xInput.replace(",", "."));
+        var y = parseFloat(yInput.replace(",", "."));
+
         // Obliczenia
         var z = y - (x / 2);
 

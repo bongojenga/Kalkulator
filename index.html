@@ -9,27 +9,25 @@
 
     <script>
         // Prośba użytkownika o wprowadzenie danych
-        var x = prompt("Podaj rozmiar zmiany (mm):");
-        var y = prompt("Podaj odległość od końca do środka strefy chłodzenia (mm):");
+        var xInput = prompt("Podaj rozmiar zmiany (mm):");
+		var yInput = prompt("Podaj odległość od końca do środka strefy chłodzenia (mm):");
 
-        var x = parseFloat(xInput.replace(",", "."));
-        var y = parseFloat(yInput.replace(",", "."));
+		// Zamień przecinek na kropkę i przekształć na liczbę
+		var x = parseFloat(xInput.replace(",", "."));
+		var y = parseFloat(yInput.replace(",", "."));
 
-        // Obliczenia
-        var z = y - (x / 2);
+        // Zabezpieczenie przed podaniem danych innych niż wymagane
+		if (isNaN(x) || isNaN(y)) {document.write("Wprowadź poprawne liczby.");} 
+    
+    else {
+    
+    var z = y - (x / 2);
 
-        // Wyświetlanie wyniku
-        // document.write("Położenie igły wewnątrz zmiany: " + z + " (mm)");
-
-        // Dodanie informacji dodatkowej na podstawie wartości z
-        if (z > 0) {
-            document.write("Wierzchołek kriosondy powinien wystawać poza guz " + Math.abs(z) + " (mm).");
-        } else if (z < 0) {
-            document.write("Wierzchołek kriosondy powinien pozostać wewnątrz guza " + Math.abs(z) + " (mm) od jego końca.");
-        } else {
-            document.write("Wierzchołek kriosondy powinien znaleźć się dokładnie na końcu guza.");
+    if (z > 0) {document.write("Wierzchołek kriosondy powinien wystawać poza guz " + Math.abs(z) + " (mm).");} 
+    else if (z < 0) {document.write("Wierzchołek kriosondy powinien pozostać wewnątrz guza " + Math.abs(z) + " (mm) od jego końca.");}
+    else {document.write("Wierzchołek kriosondy powinien znaleźć się dokładnie na końcu guza.");}
         }
-    </script>
+     </script>
 
 </body>
 </html>
